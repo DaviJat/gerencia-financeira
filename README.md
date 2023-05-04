@@ -4,7 +4,12 @@ Projeto criado com `npx create-next-app@latest`
 
 Extensões do VSCode, Prettier e EditorConfig
 
-Eslint Airbnb - `npx install-peerdeps --dev eslint-config-airbnb`
+Eslint Airbnb - `npx install-peerdeps --dev eslint-config-airbnb` <br/> 
 `yarn add -D eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin@^5.13.0 @typescript-eslint/parser@^5.0.0`
 
-Prettier - `yarn add -D prettier`
+Prettier - `yarn add -D prettier` <br/>
+`yarn add -D eslint-config-prettier eslint-plugin-import eslint-plugin-simple-import-sort`
+
+Criar .prettierrc, .prettierignore, .eslintignore e alterar .eslintrc (Copiar de projetos já configurados).
+
+Adicionar `"format": "prettier --write ."` aos scripts no package.json
