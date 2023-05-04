@@ -1,0 +1,7 @@
+.background {
+  @apply bg-white h-screen;
+}
+
+.center {
+  @apply flex justify-around;
+}
