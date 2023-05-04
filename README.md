@@ -16,3 +16,8 @@ Adicionar `"format": "prettier --write ."` aos scripts no package.json
 
 Criar e configurar .vscode
 
+Tailwind file association
+
+![image](https://user-images.githubusercontent.com/91758001/236224343-28320bd6-21e3-4325-ba0e-a388a63e8f4d.png)
+
+
