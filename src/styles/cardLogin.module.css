@@ -1,3 +1,19 @@
-.center {
-  @apply flex flex-col items-center;
+.card {
+  @apply bg-white p-4 flex flex-col border border-gray rounded-lg w-64;
+}
+
+.card h2 {
+  @apply self-center text-gray text-xl font-medium;
+}
+
+.card label {
+  @apply text-xs text-gray mt-3 ml-1 mb-1;
+}
+
+.card input {
+  @apply border pl-2 h-8 border-gray outline-offset-0 rounded-md outline-none focus:outline-primary focus:duration-500 focus:border-primary text-xs;
+}
+
+.card button {
+  @apply rounded-md bg-primary h-8 mt-8 text-white;
 }

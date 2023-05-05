@@ -3,5 +3,9 @@
 }
 
 .center {
-  @apply flex justify-around;
+  @apply flex flex-col items-center;
+}
+
+.title {
+  @apply my-12;
 }

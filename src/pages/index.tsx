@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <div className={styles.background}>
       <div className={styles.center}>
-        <Image src="/images/logo-dark.png" width="300" height="300" alt="logo"></Image>
+        <div className={styles.title}>
+          <Image src="/images/logo-dark.png" width="250" height="250" alt="logo"></Image>
+        </div>
         <CardLogin />
       </div>
     </div>

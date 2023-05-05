@@ -8,6 +8,7 @@ module.exports = {
       primary: '#189650',
       white: '#FFF',
       black: '#000',
+      gray: '#717971', // Outline Light Scheme - Material Design Colors
     },
   },
   plugins: [],
