@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS usuario CASCADE;
+CREATE TABLE usuario (
+	id int NOT NULL AUTO_INCREMENT ,
+	nome varchar(30) NOT NULL,
+	sobrenome varchar(30) NOT NULL,
+	email varchar(255) NOT NULL,
+	senha varchar(30) NOT NULL,
+	CONSTRAINT cliente_pk PRIMARY KEY (id),
+	CONSTRAINT cliente_email_uk UNIQUE (email)
+);
+
