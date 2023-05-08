@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang="pt-br">
       <Head>
         <link rel="icon" type="image/x-icon" href="images/logo-icon.ico" />
-        <title>Gerência Financeira</title>
       </Head>
       <body>
         <Main />
