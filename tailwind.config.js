@@ -9,7 +9,7 @@ module.exports = {
       white: '#FFF',
       black: '#000',
       // Material Design Colors
-      primary: '#189650', // Primary Light Schem
+      primary: '#189650', // Primary Light Scheme
       gray: '#717971', // Outline Light Scheme - Material Design Colors
       'primary-dark': '#006D37', // Tonal pallete - Primary 40
     },
