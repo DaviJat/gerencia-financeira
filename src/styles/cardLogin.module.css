@@ -15,5 +15,8 @@
 }
 
 .card button {
-  @apply rounded-md bg-primary h-8 mt-8 text-white;
+  @apply rounded-md bg-primary h-8 mt-8 text-white hover:bg-primary-dark hover:duration-200;
+}
+.card a {
+  @apply text-gray text-xs ml-1 mt-2 hover:text-primary hover:underline;
 }
