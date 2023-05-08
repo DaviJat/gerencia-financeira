@@ -11,7 +11,7 @@
 }
 
 .card input {
-  @apply border pl-2 h-8 border-gray outline-offset-0 rounded-md outline-none focus:outline-primary focus:duration-500 focus:border-primary text-xs;
+  @apply border pl-2 h-8 border-gray outline-offset-0 rounded-md outline-none focus:outline-primary focus:duration-500 focus:border-primary text-sm;
 }
 
 .card button {
