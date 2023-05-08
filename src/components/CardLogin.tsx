@@ -18,7 +18,7 @@ export default function CardLogin() {
     <div className={styles.card}>
       <h2>Login</h2>
       <label htmlFor="email">Digite seu email:</label>
-      <input id="email" name="email" type="text" onChange={(e) => (usuario.email = e.target.value)} />
+      <input id="email" name="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
       <label htmlFor="password">Digite sua senha:</label>
       <input id="password" name="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
       <a href="">Esqueceu sua senha?</a>
