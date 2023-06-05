@@ -17,6 +17,19 @@
 .card button {
   @apply rounded-md bg-primary h-8 mt-8 text-white hover:bg-primary-dark hover:duration-200;
 }
-.card a {
+
+.forgotPassword {
   @apply text-gray text-xs ml-1 mt-2 hover:text-primary hover:underline;
+}
+
+.registerContainer {
+  @apply flex items-center justify-center text-xs mt-2;
+}
+
+.registerContainer p {
+  @apply text-gray;
+}
+
+.registerContainer a {
+  @apply text-primary ml-1 hover:underline;
 }

@@ -21,10 +21,16 @@ export default function CardLogin() {
       <input id="email" name="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
       <label htmlFor="password">Digite sua senha:</label>
       <input id="password" name="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
-      <a href="">Esqueceu sua senha?</a>
+      <a className={styles.forgotPassword} href="">
+        Esqueceu sua senha?
+      </a>
       <button name="loginUsuario" onClick={loginUsuario}>
         Entrar
       </button>
+      <div className={styles.registerContainer}>
+        <p>Primeiro acesso?</p>
+        <a href="">Cadastre-se</a>
+      </div>
     </div>
   );
 }
