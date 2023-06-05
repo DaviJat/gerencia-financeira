@@ -1,4 +1,3 @@
-import * as router from '@/pages/api/router';
 import styles from '@/styles/cardLogin.module.css';
 import { useState } from 'react';
 
@@ -12,13 +11,22 @@ export default function CardLogin() {
 
   const [form, setForm] = useState('login');
 
-  function loginUsuario(e: any) {
-    usuario.service = e.target.name;
-    router.apiPost(usuario, 'usuario');
+  function loginUsuario(event: React.FormEvent) {
+    event.preventDefault();
+    // usuario.service = e.target.name;
+    // router.apiPost(usuario, 'usuario');
+    console.log('Login');
+  }
+
+  function cadastroUsuario(event: React.FormEvent) {
+    event.preventDefault();
+    // usuario.service = e.target.name;
+    // router.apiPost(usuario, 'usuario');
+    console.log('Cadastro');
   }
 
   return (
-    <form className={styles.card}>
+    <form onSubmit={form == 'login' ? loginUsuario : cadastroUsuario} className={styles.card}>
       {form == 'login' ? (
         <>
           <h2>Login</h2>
@@ -29,7 +37,7 @@ export default function CardLogin() {
           <a className={styles.forgotPassword} href="">
             Esqueceu sua senha?
           </a>
-          <button name="loginUsuario" onClick={loginUsuario}>
+          <button name="loginUsuario" type="submit">
             Entrar
           </button>
           <div className={styles.registerContainer}>
@@ -46,7 +54,7 @@ export default function CardLogin() {
           <input id="email" name="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
           <label htmlFor="password">Digite sua senha:</label>
           <input id="password" name="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
-          <button name="loginUsuario" onClick={loginUsuario}>
+          <button name="loginUsuario" type="submit">
             Cadastrar
           </button>
           <div className={styles.registerContainer}>
