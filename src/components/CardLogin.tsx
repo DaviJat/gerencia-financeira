@@ -1,6 +1,6 @@
+import * as router from '@/pages/api/router';
+import styles from '@/styles/cardLogin.module.css';
 import { useState } from 'react';
-import * as router from '../pages/api/router';
-import styles from '../styles/cardLogin.module.css';
 
 export default function CardLogin() {
   const [usuario] = useState({

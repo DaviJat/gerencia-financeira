@@ -1,6 +1,6 @@
 import CardLogin from '@/components/CardLogin';
+import styles from '@/styles/index.module.css';
 import Image from 'next/image';
-import styles from '../styles/index.module.css';
 
 export default function Home() {
   return (

@@ -1,4 +1,4 @@
-import { loginUsuario } from '../../types/usuario'
+import { loginUsuario } from '@/types/usuario'
 
 export default async (req: any, res: any) => {
 
