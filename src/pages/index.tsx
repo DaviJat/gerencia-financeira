@@ -7,7 +7,14 @@ export default function Home() {
     <div className={styles.background}>
       <div className={styles.center}>
         <div className={styles.title}>
-          <Image src="/images/logo-dark.png" width="250" height="250" alt="logo"></Image>
+          <Image
+            src="/images/logo-dark.png"
+            width="250"
+            height="250"
+            alt="logo"
+            style={{ width: 'auto', height: 'auto' }}
+            priority={true}
+          />
         </div>
         <CardLogin />
       </div>
