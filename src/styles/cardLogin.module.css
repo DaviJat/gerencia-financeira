@@ -30,6 +30,6 @@
   @apply text-gray;
 }
 
-.registerContainer a {
-  @apply text-primary ml-1 hover:underline;
+.registerContainer span {
+  @apply text-primary pl-1 hover:underline cursor-pointer;
 }
