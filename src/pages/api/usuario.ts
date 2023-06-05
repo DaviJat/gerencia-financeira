@@ -2,20 +2,18 @@ import { loginUsuario } from '@/types/usuario'
 
 export default async (req: any, res: any) => {
 
-    const { email, senha, service } = req.body
+    const { nome, email, senha, service } = req.body
 
     switch (service) {
         case 'loginUsuario': {
-            const checkLogin = await loginUsuario(email, senha)
-            res.json({ result: checkLogin })
+            const usuario = await loginUsuario(email, senha)
 
-            if (checkLogin != null) {
-                console.log('Logado')
+            if (usuario) {
+                res.json({ result: 'Cliente encontrado.' })
             } else {
-                console.log('Não logado')
+                res.json({ error: 'Cliente não encontrado.' })
             }
-
-            break
+            break;
         }
     }
 }

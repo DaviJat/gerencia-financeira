@@ -12,6 +12,4 @@ export async function loginUsuario(email: string, senha: string) {
     } else {
         return null
     }
-
-
 }

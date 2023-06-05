@@ -1,3 +1,4 @@
+import * as router from '@/pages/api/router';
 import styles from '@/styles/cardLogin.module.css';
 import { useState } from 'react';
 
@@ -13,15 +14,15 @@ export default function CardLogin() {
 
   function loginUsuario(event: React.FormEvent) {
     event.preventDefault();
-    // usuario.service = 'loginUsuario';
-    // router.apiPost(usuario, 'usuario');
+    usuario.service = 'loginUsuario';
+    router.apiPost(usuario, 'usuario');
     console.log('Login');
   }
 
   function cadastroUsuario(event: React.FormEvent) {
     event.preventDefault();
-    // usuario.service = 'cadastroUsuario;
-    // router.apiPost(usuario, 'usuario');
+    usuario.service = 'cadastroUsuario';
+    router.apiPost(usuario, 'usuario');
     console.log('Cadastro');
   }
 
