@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function CardLogin() {
   const [usuario] = useState({
+    nome: '',
     email: '',
     senha: '',
     service: '',
@@ -17,7 +18,7 @@ export default function CardLogin() {
   }
 
   return (
-    <div className={styles.card}>
+    <form className={styles.card}>
       {form == 'login' ? (
         <>
           <h2>Login</h2>
@@ -39,22 +40,21 @@ export default function CardLogin() {
       ) : (
         <>
           <h2>Cadastro</h2>
+          <label htmlFor="email">Digite seu nome:</label>
+          <input id="nome" name="nome" type="text" onChange={(e) => (usuario.email = e.target.value)} />
           <label htmlFor="email">Digite seu email:</label>
           <input id="email" name="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
           <label htmlFor="password">Digite sua senha:</label>
           <input id="password" name="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
-          <a className={styles.forgotPassword} href="">
-            Esqueceu sua senha?
-          </a>
           <button name="loginUsuario" onClick={loginUsuario}>
-            Entrar
+            Cadastrar
           </button>
           <div className={styles.registerContainer}>
-            <p>Primeiro acesso?</p>
-            <span onClick={() => setForm('login')}>Cadastre-se</span>
+            <p>Já possui conta?</p>
+            <span onClick={() => setForm('login')}>Fazer login</span>
           </div>
         </>
       )}
-    </div>
+    </form>
   );
 }
