@@ -13,14 +13,14 @@ export default function CardLogin() {
 
   function loginUsuario(event: React.FormEvent) {
     event.preventDefault();
-    // usuario.service = e.target.name;
+    // usuario.service = 'loginUsuario';
     // router.apiPost(usuario, 'usuario');
     console.log('Login');
   }
 
   function cadastroUsuario(event: React.FormEvent) {
     event.preventDefault();
-    // usuario.service = e.target.name;
+    // usuario.service = 'cadastroUsuario;
     // router.apiPost(usuario, 'usuario');
     console.log('Cadastro');
   }
@@ -31,15 +31,13 @@ export default function CardLogin() {
         <>
           <h2>Login</h2>
           <label htmlFor="email">Digite seu email:</label>
-          <input id="email" name="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
+          <input id="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
           <label htmlFor="password">Digite sua senha:</label>
-          <input id="password" name="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
+          <input id="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
           <a className={styles.forgotPassword} href="">
             Esqueceu sua senha?
           </a>
-          <button name="loginUsuario" type="submit">
-            Entrar
-          </button>
+          <button type="submit">Entrar</button>
           <div className={styles.registerContainer}>
             <p>Primeiro acesso?</p>
             <span onClick={() => setForm('cadastro')}>Cadastre-se</span>
@@ -49,14 +47,12 @@ export default function CardLogin() {
         <>
           <h2>Cadastro</h2>
           <label htmlFor="email">Digite seu nome:</label>
-          <input id="nome" name="nome" type="text" onChange={(e) => (usuario.email = e.target.value)} />
+          <input id="nome" type="text" onChange={(e) => (usuario.email = e.target.value)} />
           <label htmlFor="email">Digite seu email:</label>
-          <input id="email" name="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
+          <input id="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
           <label htmlFor="password">Digite sua senha:</label>
-          <input id="password" name="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
-          <button name="loginUsuario" type="submit">
-            Cadastrar
-          </button>
+          <input id="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
+          <button type="submit">Cadastrar</button>
           <div className={styles.registerContainer}>
             <p>Já possui conta?</p>
             <span onClick={() => setForm('login')}>Fazer login</span>
