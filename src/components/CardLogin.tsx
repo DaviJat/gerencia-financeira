@@ -12,11 +12,13 @@ export default function CardLogin() {
 
   const [form, setForm] = useState('login');
 
-  function loginUsuario(event: React.FormEvent) {
+  async function loginUsuario(event: React.FormEvent) {
     event.preventDefault();
     usuario.service = 'loginUsuario';
-    router.apiPost(usuario, 'usuario');
-    console.log('Login');
+    const res = router.apiPost(usuario, 'usuario');
+    res.then((value) => {
+      console.log(value.result);
+    });
   }
 
   function cadastroUsuario(event: React.FormEvent) {

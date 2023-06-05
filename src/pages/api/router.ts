@@ -8,5 +8,5 @@ export async function apiPost(data: any, endpoint: any) {
         },
     });
 
-    return response.json;
+    return response.json();
 }
