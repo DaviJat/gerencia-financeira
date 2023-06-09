@@ -1,4 +1,4 @@
-import { loginUsuario } from '@/types/usuario'
+import { loginUsuario } from '@/types/usuario';
 
 export default async (req: any, res: any) => {
 
@@ -12,7 +12,10 @@ export default async (req: any, res: any) => {
                 if (usuario) {
                     res.json({ result: 'Cliente encontrado.' })
                 } else {
-                    res.json({ error: 'Cliente não encontrado.' })
+                    res.json({
+                        error:
+                            'Usuário ou senha inválidos.'
+                    })
                 }
                 break;
             }

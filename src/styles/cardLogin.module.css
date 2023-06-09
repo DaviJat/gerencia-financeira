@@ -33,3 +33,7 @@
 .registerContainer span {
   @apply text-primary pl-1 hover:underline cursor-pointer;
 }
+
+.mensagemErro {
+  @apply text-[red] text-xs ml-1 mt-2;
+}

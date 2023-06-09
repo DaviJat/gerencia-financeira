@@ -11,14 +11,25 @@ export default function CardLogin() {
   });
 
   const [form, setForm] = useState('login');
+  const [mensagemErro, setMensagemErro] = useState('');
 
   async function loginUsuario(event: React.FormEvent) {
     event.preventDefault();
     usuario.service = 'loginUsuario';
     const res = router.apiPost(usuario, 'usuario');
-    res.then((value) => {
-      console.log(value.result);
-    });
+
+    if (usuario.email == '' || usuario.senha == '') {
+      setMensagemErro('Preencha todos os campos.');
+    } else {
+      res.then((value) => {
+        if (value.error) {
+          setMensagemErro(value.error);
+        } else {
+          setMensagemErro('');
+          console.log('Cliente encontrado');
+        }
+      });
+    }
   }
 
   function cadastroUsuario(event: React.FormEvent) {
@@ -28,37 +39,45 @@ export default function CardLogin() {
     console.log('Cadastro');
   }
 
+  function alteraForm(form: string) {
+    setMensagemErro('');
+    setForm(form);
+  }
   return (
     <form onSubmit={form == 'login' ? loginUsuario : cadastroUsuario} className={styles.card}>
+      <h2>{form == 'login' ? 'Login' : 'Cadastro'}</h2>
+
+      {form == 'cadastro' && (
+        <>
+          <label htmlFor="nome">Digite seu nome:</label>
+          <input id="nome" type="text" onChange={(e) => (usuario.nome = e.target.value)} />
+        </>
+      )}
+
+      <label htmlFor="email">Digite seu email:</label>
+      <input id="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
+      <label htmlFor="password">Digite sua senha:</label>
+      <input id="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
+      {form == 'login' && (
+        <a className={styles.forgotPassword} href="">
+          Esqueceu sua senha?
+        </a>
+      )}
+      {mensagemErro !== '' && <p className={styles.mensagemErro}>{mensagemErro}</p>}
       {form == 'login' ? (
         <>
-          <h2>Login</h2>
-          <label htmlFor="email">Digite seu email:</label>
-          <input id="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
-          <label htmlFor="password">Digite sua senha:</label>
-          <input id="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
-          <a className={styles.forgotPassword} href="">
-            Esqueceu sua senha?
-          </a>
           <button type="submit">Entrar</button>
           <div className={styles.registerContainer}>
             <p>Primeiro acesso?</p>
-            <span onClick={() => setForm('cadastro')}>Cadastre-se</span>
+            <span onClick={() => alteraForm('cadastro')}>Cadastre-se</span>
           </div>
         </>
       ) : (
         <>
-          <h2>Cadastro</h2>
-          <label htmlFor="email">Digite seu nome:</label>
-          <input id="nome" type="text" onChange={(e) => (usuario.email = e.target.value)} />
-          <label htmlFor="email">Digite seu email:</label>
-          <input id="email" type="email" onChange={(e) => (usuario.email = e.target.value)} />
-          <label htmlFor="password">Digite sua senha:</label>
-          <input id="password" type="password" onChange={(e) => (usuario.senha = e.target.value)} />
           <button type="submit">Cadastrar</button>
           <div className={styles.registerContainer}>
             <p>Já possui conta?</p>
-            <span onClick={() => setForm('login')}>Fazer login</span>
+            <span onClick={() => alteraForm('login')}>Fazer login</span>
           </div>
         </>
       )}
