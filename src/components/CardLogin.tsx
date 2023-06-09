@@ -43,6 +43,7 @@ export default function CardLogin() {
     setMensagemErro('');
     setForm(form);
   }
+
   return (
     <form onSubmit={form == 'login' ? loginUsuario : cadastroUsuario} className={styles.card}>
       <h2>{form == 'login' ? 'Login' : 'Cadastro'}</h2>
